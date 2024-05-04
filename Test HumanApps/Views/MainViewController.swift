@@ -146,7 +146,15 @@ private extension MainViewController {
         fillLayer.fillRule = CAShapeLayerFillRule.evenOdd
         fillLayer.fillColor = UIColor.systemGray5.cgColor
         fillLayer.opacity = 0.6
+        
+        let borderLayer = CAShapeLayer()
+        borderLayer.path = pathSmallRect.cgPath
+        borderLayer.strokeColor = UIColor.yellow.cgColor
+        borderLayer.lineWidth = 2
+        borderLayer.fillColor = UIColor.clear.cgColor
+        
         cropContainer.layer.addSublayer(fillLayer)
+        cropContainer.layer.addSublayer(borderLayer)
     }
     
     @objc func addButtonTapped() {
